@@ -18,18 +18,26 @@
     <main>
       <div>
         <form id="converter-form">
-          <select id="select-type">
+          <!-- Converter Type -->
+          <select id="type-select" aria-label="Converter type">
             <option value="length" selected>Length Conversion</option>
             <option value="weight">Weight Conversion</option>
             <option value="temperature">Temperature Conversion</option>
           </select>
 
+          <!-- Value Input -->
           <div>
-            <label for="input-value">Value</label>
-            <input type="number" id="input-value" placeholder="Enter a value" />
+            <label for="value-input">Value</label>
+            <input
+              type="number"
+              id="value-input"
+              placeholder="Enter a value"
+              step="any"
+            />
           </div>
 
           <div>
+            <!-- From Unit -->
             <div>
               <label for="from-unit">From</label>
               <select id="from-unit">
@@ -45,6 +53,7 @@
               </select>
             </div>
 
+            <!-- To Unit -->
             <div>
               <label for="to-unit">To</label>
               <select id="to-unit">
@@ -61,10 +70,19 @@
             </div>
           </div>
 
-          <output id="result" for="input-value from-unit to-unit">---</output>
+          <!-- Result -->
+          <output
+            id="result"
+            for="value-input from-unit to-unit"
+            aria-live="polite"
+            >---</output
+          >
         </form>
 
-        <p id="error-message">Conversion Error</p>
+        <!-- Error Message -->
+        <p id="error-message" role="alert" aria-live="assertive" hidden>
+          Conversion Error
+        </p>
       </div>
     </main>
 
