@@ -8,39 +8,55 @@
       name="description"
       content="Free online unit converter for length, weight, temperature. Fast and easy conversions."
     />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
   </head>
 
-  <body>
-    <header>
-      <h1>Smart Converter</h1>
+  <body class="page">
+    <header class="header">
+      <h1 class="header__title">Smart Converter</h1>
     </header>
 
-    <main>
-      <div>
-        <form id="converter-form">
+    <main class="main">
+      <div class="converter">
+        <form id="converter-form" class="converter__form">
           <!-- Converter Type -->
-          <select id="type-select" aria-label="Converter type">
+          <select
+            id="type-select"
+            class="converter__type"
+            aria-label="Converter type"
+          >
             <option value="length" selected>Length Conversion</option>
             <option value="weight">Weight Conversion</option>
             <option value="temperature">Temperature Conversion</option>
           </select>
 
           <!-- Value Input -->
-          <div>
-            <label for="value-input">Value</label>
+          <div class="converter__field-group">
+            <label for="value-input" class="converter__field-label"
+              >Value</label
+            >
             <input
               type="number"
               id="value-input"
+              class="converter__field"
               placeholder="Enter a value"
               step="any"
             />
           </div>
 
-          <div>
+          <div class="converter__units">
             <!-- From Unit -->
-            <div>
-              <label for="from-unit">From</label>
-              <select id="from-unit">
+            <div class="converter__field-group">
+              <label for="from-unit" class="converter__field-label">From</label>
+              <select id="from-unit" class="converter__field">
                 <option value="" selected disabled hidden>Select a unit</option>
                 <optgroup label="Metric System">
                   <option value="mm">millimeter</option>
@@ -54,9 +70,9 @@
             </div>
 
             <!-- To Unit -->
-            <div>
-              <label for="to-unit">To</label>
-              <select id="to-unit">
+            <div class="converter__field-group">
+              <label for="to-unit" class="converter__field-label">To</label>
+              <select id="to-unit" class="converter__field">
                 <option value="" selected disabled hidden>Select a unit</option>
                 <optgroup label="Metric System">
                   <option value="mm">millimeter</option>
@@ -73,6 +89,7 @@
           <!-- Result -->
           <output
             id="result"
+            class="converter__result"
             for="value-input from-unit to-unit"
             aria-live="polite"
             >---</output
@@ -80,16 +97,23 @@
         </form>
 
         <!-- Error Message -->
-        <p id="error-message" role="alert" aria-live="assertive" hidden>
+        <p
+          id="error-message"
+          class="converter__error"
+          role="alert"
+          aria-live="assertive"
+          hidden
+        >
           Conversion Error
         </p>
       </div>
     </main>
 
-    <footer>
-      <p>
+    <footer class="footer">
+      <p class="footer__text">
         © 2026 Tetiana&nbsp;Kononenko. Licensed under the
         <a
+          class="footer__link"
           href="https://opensource.org/license/MIT"
           target="_blank"
           rel="noopener noreferrer"
